@@ -111,7 +111,7 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3x1     	| 1x1 stride, same padding, outputs 32x32x1 	|
+| Convolution 1x1x1     	| 1x1 stride, same padding, outputs 32x32x1 	|
 | ReLu					|												|
 | Convolution 3x3x64	    | 1x1 stride, same padding, outputs 32x32x64     |
 | ReLu		|       									|
@@ -145,11 +145,6 @@ My final model results were:
 * training set accuracy of 97.2%
 * validation set accuracy of 99.0%
 * test set accuracy of 96.3%
-
-The performance is notably lower on both training and test sets because we run so few epochs in this notebook. The model is underfitting with respect to the larger data sets. I had some troubles with exporting my models across computers so the "real" results are not presented here. However, on a more powerful machine, the results (with the exact same architecture trained for ~5 hours on NVIDIA GTX TITAN X) were:
-* training set accuracy of 99.3%
-* validation set accuracy of 99.3%
-* test set accuracy of **99.3**%
 
 This surpasses human level (98.8%) and also Yann LeCun's 2011 benchmark (99.1%) while using a different architecture approach so it is admissible. However, ensembles or more complex architectures (see Haloi 2016) can get a far higher score. One should also spend far more time on preprocessing.
 
