@@ -146,7 +146,7 @@ My final model results were:
 * validation set accuracy of 99.0%
 * test set accuracy of 96.3%
 
-This surpasses human level (98.8%) and also Yann LeCun's 2011 benchmark (99.1%) while using a different architecture approach so it is admissible. However, ensembles or more complex architectures (see Haloi 2016) can get a far higher score. One should also spend far more time on preprocessing.
+Considering that human level performance lies between 98.4-98.8% on the test set, we still have some way to go. 
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
