@@ -23,6 +23,7 @@ The goals / steps of this project are the following:
 [signs_examples]: ./examples/signs_examples.png "Examples of data"
 [download]: ./examples/download.png "Fake data"
 [original]: ./examples/original.png "Original picture"
+[predictions]: ./examples/predictions.png "Predictions"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -193,11 +194,13 @@ Here are the results of the prediction:
 | Road work			| 	Right-of-way at the next intersection   							|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 96.3%
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 96.3%
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for doing this via visualizations is located in the 20th cell of the Ipython notebook.
+
+![alt text][predictions]
 
 We see that even on pictures where the classifier fails, it usually picks the correct option as the second most likely (stop sign, right-of-way). A notable exception is the road work sign, where correct label is not even in top 5! Very peculiar, considering that the image is very crisp.
 
