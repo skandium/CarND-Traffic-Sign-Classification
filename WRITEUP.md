@@ -19,6 +19,10 @@ The goals / steps of this project are the following:
 [image6]: ./examples/sign3.png "Traffic Sign 3"
 [image7]: ./examples/sign4.png "Traffic Sign 4"
 [image8]: ./examples/sign5.png "Traffic Sign 5"
+[bar]: ./examples/bar.png "Distribution of classes"
+[signs_examples]: ./examples/signs_examples.png "Examples of data"
+[download]: ./examples/download.png "Fake data"
+[original]: ./examples/original.png "Original picture"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -41,6 +45,7 @@ signs data set:
 
 * The size of training set is 34799
 * The size of test set is 12630
+* The size of the validation set is 4410
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 * The number of augmented images added is 173996
@@ -50,9 +55,16 @@ signs data set:
 The code for this step is contained in the fifth code cell of the IPython notebook, under "Include an exploratory visualization of the dataset"
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the class frequencies. Classes are clearly unbalanced in the dataset.
+
+
 ![alt text][bar]
+
+
 Here we plot 100 signs from the training set
+
 ![alt text][signs_examples]
+
+
 We see that they are not "perfect" pictures - sign and picture boundaries do not match, they are often blurry, with low brightess and in non-default poses. However, they are relatively well centered.
 
 ### Design and Test a Model Architecture
@@ -75,14 +87,17 @@ Transformation into one dimension is done because, as per LeCun's paper, quite c
 
 #### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-Training, validation and test sets **were already set up** when downloading the files from Udacity. The training set consists of 34799 images, test set of 12630 and validation set of 4000 images.
+Training, validation and test sets **were already set up** when downloading the files from Udacity. The training set consists of 34799 images, test set of 12630 and validation set of 4410 images.
 If it were not split already, I would have simply used scikit-learn's train-test split function.
 
 Data augmentation was heavily used in the seventh code cell: for every image, 5 augmented images were created and added to the data set. These help to reduce the generalization error, on the one hand because estimating 8.5 million parameters needs a lot of data and secondly because you introduce the model to more circumstances. I use affine transformations, namely rotation, shearing and translation. All augmented pictures are then multiplied by a random brightness coefficient (they can become darker or lighter). We add 173996 augmented pictures to the training set, for a total size of 208795.
 In practice, the augmentation process looks something like this: 
 First, we have an original image:
-![original][image1]
+
+![original][original]
+
 We create 5 fakes:
+
 ![fakes][download]
 
 Notably, I took no steps to alleviate unbalanced classes.
