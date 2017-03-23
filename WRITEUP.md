@@ -186,11 +186,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
+| Stop Sign      		| Traffic signals 									| 
 | Children crossing    			| Children crossing									|
-| Right-of-way at the next intersection					| Right-of-way at the next intersection											|
-| Wild animals	      		| 	Priority road					 				|
-| Road work			| 	Beware of ice/snow     							|
+| Right-of-way at the next intersection					| Beware of ice/snow								|
+| Wild animals	      		| 	Wild animals				 				|
+| Road work			| 	Right-of-way at the next intersection   							|
 
 
 The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 96.3%
