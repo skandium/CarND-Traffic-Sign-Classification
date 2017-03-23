@@ -180,7 +180,7 @@ I use a naive approach for classification: resizing all images to 32x32, regardl
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
+The code for making predictions on my final model is located in the sixteenth cell of the Ipython notebook.
 
 Here are the results of the prediction:
 
@@ -193,12 +193,12 @@ Here are the results of the prediction:
 | Road work			| 	Beware of ice/snow     							|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares poorly to the accuracy on the test set of 95.7%
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 96.3%
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model, together with the visualizations is located in the 11th cell of the Ipython notebook.
+The code for doing this via visualizations is located in the 20th cell of the Ipython notebook.
 
-For the first three images, the classifier is relatively certain of the correct prediction. For the images where it fails, it is less certain and at least for Wild animals, the correct prediction is the second most likely guess. For Road work, the model does not include the correct label in the top 5 which is very peculiar as the image seems to be very clear. 
+We see that even on pictures where the classifier fails, it usually picks the correct option as the second most likely (stop sign, right-of-way). A notable exception is the road work sign, where correct label is not even in top 5! Very peculiar, considering that the image is very crisp.
 
 In general, this kind of performance would not be tolerable on the road: the correct sign has to be the top 1 choice with at least 99% probability. However, our CNN is likely a pretty decent classifier on cropped and centered images. We simply would need to add some localization method as the first step of the pipeline for these out of sample images and performance would surely increase. Ideally, this would be the same method that was used on our training data.
