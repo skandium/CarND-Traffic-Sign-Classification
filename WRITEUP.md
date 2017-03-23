@@ -134,18 +134,18 @@ My final model consisted of the following layers:
 
 The code for training the model is located in the twelth cell of the ipython notebook, under "Train, Validate and Test the model".
 
-To train the model, I used an AdamOptimizer with a batch of 128, learning rate 0.0005, and L2 regularization with coefficient 0.01 for all FC weights.
+To train the model, I used an AdamOptimizer with a batch of 128, learning rate 0.0005, and L2 regularization with coefficient 0.01 for all FC weights. I train for 10 epochs.
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the accuracy of the model is located in the thirteenth and fourteenth cells of the Ipython notebook, under "Train, Validate and Test the model.".
 
-I used the validation set accuracy to guide the training process. Once it was high enough, I tested (once) on the test set data. I trained until validation accuracy was above 99%, rather than using a fixed number of epochs.
+I used the validation set accuracy to guide the training process. 
 
 My final model results were:
-* training set accuracy of 97.2%
-* validation set accuracy of 99.0%
-* test set accuracy of 96.3%
+* training set accuracy of 95.8%
+* validation set accuracy of 97.9%
+* test set accuracy of 95.8%
 
 Considering that human level performance lies between 98.4-98.8% on the test set, we still have some way to go. 
 
@@ -187,14 +187,14 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Traffic signals 									| 
-| Children crossing    			| Children crossing									|
-| Right-of-way at the next intersection					| Beware of ice/snow								|
-| Wild animals	      		| 	Wild animals				 				|
-| Road work			| 	Right-of-way at the next intersection   							|
+| Stop Sign      		| Stop Sign									| 
+| Children crossing    			| Road work									|
+| Right-of-way at the next intersection					| Road work								|
+| Wild animals	      		| 	Bumpy road				 				|
+| Road work			| 	Road work  							|
 
 
-The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 96.3%
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. This compares poorly to the accuracy on the test set of 95.8% The model seems particularly fond of predicting the "road work" sign, perhps because of unbalanced training classes.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -202,6 +202,6 @@ The code for doing this via visualizations is located in the 20th cell of the Ip
 
 ![alt text][predictions]
 
-We see that even on pictures where the classifier fails, it usually picks the correct option as the second most likely (stop sign, right-of-way). A notable exception is the road work sign, where correct label is not even in top 5! Very peculiar, considering that the image is very crisp.
+We see that even on pictures where the classifier fails, it usually picks the correct option in the top 5 (children crossing, right-of-way, wild animals). What is worrisome is that it does not usually give much probability to the correct classes, even when the model is "unsure".
 
 In general, this kind of performance would not be tolerable on the road: the correct sign has to be the top 1 choice with at least 99% probability. However, our CNN is likely a pretty decent classifier on cropped and centered images. We simply would need to add some localization method as the first step of the pipeline for these out of sample images and performance would surely increase. Ideally, this would be the same method that was used on our training data.
