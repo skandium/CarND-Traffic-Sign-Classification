@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/sign4.png "Traffic Sign 4"
 [image8]: ./examples/sign5.png "Traffic Sign 5"
 [bar]: ./examples/bar.png "Distribution of classes"
-[signs_examples]: ./examples/signs_examples.png "Examples of data"
+[sign_examples]: ./examples/sign_examples.png "Examples of data"
 [download]: ./examples/download.png "Fake data"
 [original]: ./examples/original.png "Original picture"
 [predictions]: ./examples/predictions.png "Predictions"
@@ -63,7 +63,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 Here we plot 100 signs from the training set
 
-![alt text][signs_examples]
+![alt text][sign_examples]
 
 
 We see that they are not "perfect" pictures - sign and picture boundaries do not match, they are often blurry, with low brightess and in non-default poses. However, they are relatively well centered.
